@@ -7,9 +7,8 @@
     {{ if (isset .Params "noshowdate")  }}
     {{ else }}
       <div class="post-date pull-left">
-        Posted on
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-          {{ .Date.Format "Jan 2, 2006" }}
+          {{ .Date.Format "2. 1. 2006" }}
         </time>
       </div>
     {{ end }}
@@ -41,7 +40,7 @@
     {{ end }}
     {{ end }}
     <section class="author-info row">
-      <div class="author-avatar col-md-2">
+      <div class="author-avatar col-md-1">
         {{ with .Site.Params.avatar }}
         <img alt="Author Avatar" src="{{ . }}" />
         {{ end }}
@@ -49,9 +48,6 @@
       <div class="author-meta col-md-6">
         {{ with .Site.Params.author }}
         <h1 class="author-name text-primary">{{ . }}</h1>
-        {{ end }}
-        {{ with .Site.Params.bio }}
-        <div class="author-bio">{{ . }}</div>
         {{ end }}
       </div>
       {{ with .Site.Params.contact }}
@@ -65,14 +61,14 @@
     </section>
     <ul class="pager">
       {{ if .Next }}
-      <li class="previous"><a href="{{ .Next.Permalink }}"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous"><a href="{{ .Next.Permalink }}"><span aria-hidden="true">&larr;</span> Starší</a></li>
       {{ else }}
-      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Starší</a></li>
       {{ end }}
       {{ if .Prev }}
-      <li class="next"><a href="{{ .Prev.Permalink }}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="{{ .Prev.Permalink }}">Novější <span aria-hidden="true">&rarr;</span></a></li>
       {{ else }}
-      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next disabled"><a href="#">Novější <span aria-hidden="true">&rarr;</span></a></li>
       {{ end }}
     </ul>
   </footer>
