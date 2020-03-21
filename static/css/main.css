@@ -289,3 +289,16 @@ article section img {
     margin: 13px auto;
 }
 
+figure.floatleft {
+  float: left;
+  margin-top: 0;
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
+
+figure.floatright {
+  float: right;
+  margin-top: 0;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
