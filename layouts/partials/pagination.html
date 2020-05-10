@@ -3,10 +3,10 @@
   <hr />
 {{ end }}
 {{if .HasPrev}}
-<a class="newer-posts" href="{{ .Prev.URL }}"><span aria-hidden="true">&laquo;</span> Novější články</a>
+<a class="newer-posts" href="{{ .Next.URL }}"><span aria-hidden="true">&laquo;</span> Novější články</a>
 {{end}}
   <span class="page-number">Stránka {{ .PageNumber }} z {{.TotalPages}}</span>
 {{if .HasNext}}
-<a class="older-posts" href="{{ .Next.URL }}">Starší články <span aria-hidden="true">&raquo;</span></a>
+<a class="older-posts" href="{{ .Prev.URL }}">Starší články <span aria-hidden="true">&raquo;</span></a>
 {{end}}
 </nav>
