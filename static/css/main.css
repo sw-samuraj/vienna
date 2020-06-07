@@ -302,3 +302,9 @@ figure.floatright {
   margin-bottom: 30px;
   margin-left: 20px;
 }
+
+figcaption {
+  text-align: center;
+  font-size: 0.75em;
+  color: #7a8288;
+}
