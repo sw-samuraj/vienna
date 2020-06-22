@@ -3,15 +3,29 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  {{ if .IsPage }}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+  <meta name="twitter:description" content="{{ .Description }}" />
+  {{ if isset .Params "thumbnail" }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
+  {{ else }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Site.Params.avatar }}" />
+  {{ end }}
+  {{ end }}
   <meta property="og:title" content="{{ if .IsPage }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
   {{ with .Site.Params.themecolor }}
   <meta name="theme-color" content="{{ . }}" />
- {{ end }}
+  {{ end }}
   <meta property="og:site_name" content="{{ .Site.Title }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
-  {{ with .Params.images }}{{ range first 5 . }}
-  <meta property="og:image" content="{{ . }}" />
-  {{ end }}{{ end }}
+  {{ if isset .Params "thumbnail" }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
+  {{ else }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.avatar }}" />
+  {{ end }}
   {{ if .IsPage }}
   <meta property="og:type" content="article" />
   {{ with .Site.Params.twitter }}
@@ -23,15 +37,6 @@
   {{ end }}
   {{ else }}
   <meta property="og:type" content="website" />
-  {{ end }}
-
-  {{ if .IsPage }}
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
-  <meta name="twitter:title" content="{{ .Title }}" />
-  <meta name="twitter:description" content="{{ .Description }}" />
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
   {{ end }}
 
   <title>
