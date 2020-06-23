@@ -28,6 +28,7 @@
   {{ end }}
   {{ if .IsPage }}
   <meta property="og:type" content="article" />
+  <meta property="og:description" content="{{ .Description }}" />
   {{ with .Site.Params.twitter }}
   <meta property="og:article:author" content="https://twitter.com/{{ . }}" />
   {{ end }}
