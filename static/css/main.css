@@ -308,3 +308,21 @@ figcaption {
   font-size: 0.75em;
   color: #7a8288;
 }
+
+table {
+  border-top: 3px solid green;
+  border-bottom: 3px solid green;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+thead {
+  border-bottom: 1px solid green;
+}
+
+td, th {
+  padding-left: 1em;
+  padding-right: 1em;
+}
