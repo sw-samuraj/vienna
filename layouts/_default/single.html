@@ -60,15 +60,15 @@
       {{ end }}
     </section>
     <ul class="pager">
-      {{ if .Next }}
-      <li class="previous"><a href="{{ .Next.Permalink }}"><span aria-hidden="true">&larr;</span> Novější</a></li>
-      {{ else }}
-      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Novější</a></li>
-      {{ end }}
       {{ if .Prev }}
-      <li class="next"><a href="{{ .Prev.Permalink }}">Starší <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="previous"><a href="{{ .Prev.Permalink }}"><span aria-hidden="true">&larr;</span> Starší</a></li>
       {{ else }}
-      <li class="next disabled"><a href="#">Starší <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Starší</a></li>
+      {{ end }}
+      {{ if .Next }}
+      <li class="next"><a href="{{ .Next.Permalink }}">Novější <span aria-hidden="true">&rarr;</span></a></li>
+      {{ else }}
+      <li class="next disabled"><a href="#">Novější <span aria-hidden="true">&rarr;</span></a></li>
       {{ end }}
     </ul>
   </footer>
